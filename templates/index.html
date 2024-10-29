@@ -1,0 +1,46 @@
+{% extends "base.html" %} 
+{% block content %}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+            <div class="card shadow-lg">
+                <div class="card-header gradient-background-2 text-white">
+                    <h2 class="my-3">Cotton Disease Detection</h2>
+                </div>
+                <div class="card-body">
+                    <div class="upload-section mb-4">
+                        <form id="upload-file" method="post" enctype="multipart/form-data">
+                            <div class="upload-container">
+                                <label for="imageUpload" class="upload-label">
+                                    <i class="fas fa-cloud-upload-alt me-2"></i>Choose Image
+                                </label>
+                                <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="image-section" style="display:none;">
+                        <div class="img-preview mx-auto">
+                            <div id="imagePreview"></div>
+                        </div>
+                        <button type="button" class="btn btn-primary btn-lg px-5 mt-4" id="btn-predict">
+                            <i class="fas fa-microscope me-2"></i>Analyze
+                        </button>
+                    </div>
+
+                    <div class="loader mx-auto" style="display:none;"></div>
+
+                    <div class="result-section mt-4">
+                        <div id="result" class="alert alert-success" style="display:none;">
+                            <i class="fas fa-check-circle me-2"></i>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
